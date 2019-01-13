@@ -23,7 +23,13 @@ class _MasterScreenState extends State<MasterScreen> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Materially Better'),
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+      ),
       body: screen,
+      drawer: Drawer(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _pageIndex,
         items: <BottomNavigationBarItem>[
