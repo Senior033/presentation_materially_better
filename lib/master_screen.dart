@@ -1,3 +1,4 @@
+import 'package:final_app/colors_screen.dart';
 import 'package:final_app/plan_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,18 @@ class _MasterScreenState extends State<MasterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Widget screen;
+    switch (_pageIndex) {
+      case 0:
+        screen = PlanScreen();
+        break;
+      case 1:
+        screen = ColorsScreen();
+        break;
+    }
+
     return Scaffold(
-      body: PlanScreen(),
+      body: screen,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _pageIndex,
         items: <BottomNavigationBarItem>[
