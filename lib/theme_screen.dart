@@ -20,6 +20,8 @@ class _ThemeScreenState extends State<ThemeScreen> {
               drawerArt,
               height: drawerArtLoadingHeight,
               fit: BoxFit.cover,
+              color: Theme.of(context).accentColor,
+              colorBlendMode: BlendMode.color,
             ),
           ),
         ],
