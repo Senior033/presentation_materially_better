@@ -7,8 +7,38 @@ class MasterScreen extends StatefulWidget {
 }
 
 class _MasterScreenState extends State<MasterScreen> {
+  int _pageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return PlanScreen();
+    return Scaffold(
+      body: PlanScreen(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _pageIndex,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.assignment,
+            ),
+            title: Text(
+              'Plan',
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.style,
+            ),
+            title: Text(
+              'Colors',
+            ),
+          ),
+        ],
+        onTap: (int tabIndex) {
+          setState(() {
+            _pageIndex = tabIndex;
+          });
+        },
+      ),
+    );
   }
 }
