@@ -1,3 +1,4 @@
+import 'package:final_app/demo_content/colors.dart';
 import 'package:flutter/material.dart';
 
 class ColorsScreen extends StatefulWidget {
@@ -16,17 +17,11 @@ class _ColorsScreenState extends State<ColorsScreen> {
         padding: const EdgeInsets.all(8.0),
         crossAxisSpacing: 8.0,
         mainAxisSpacing: 8.0,
-        children: <Widget>[
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: Colors.green,
-          ),
-        ],
+        children: themeColors.map((Color color) {
+          return Container(
+            color: color,
+          );
+        }).toList(),
       ),
     );
   }
