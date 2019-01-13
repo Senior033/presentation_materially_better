@@ -26,9 +26,19 @@ class _MasterScreenState extends State<MasterScreen> {
           return Step(
             title: Text(
               demoStep.title,
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
             ),
-            content: Text(
-              demoStep.content,
+            content: Container(
+              width: double.infinity,
+              child: Text(
+                demoStep.content,
+                style: TextStyle(
+                  fontSize: 22.0,
+                  color: Theme.of(context).accentColor,
+                ),
+              ),
             ),
           );
         }).toList(),
