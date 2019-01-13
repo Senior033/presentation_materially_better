@@ -18,10 +18,40 @@ class _ColorsScreenState extends State<ColorsScreen> {
         crossAxisSpacing: 8.0,
         mainAxisSpacing: 8.0,
         children: themeColors.map((Color color) {
-          return Container(
+          return ColorGridButton(
             color: color,
           );
         }).toList(),
+      ),
+    );
+  }
+}
+
+class ColorGridButton extends StatelessWidget {
+  ColorGridButton({
+    this.color,
+  });
+
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        color: color,
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: Colors.white,
+          width: 6.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0x22000000),
+            offset: Offset(0.0, 4.0),
+            blurRadius: 4.0,
+          ),
+        ],
       ),
     );
   }
