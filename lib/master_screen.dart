@@ -1,5 +1,6 @@
 import 'package:final_app/colors_screen.dart';
 import 'package:final_app/plan_screen.dart';
+import 'package:final_app/theme_screen.dart';
 import 'package:flutter/material.dart';
 
 class MasterScreen extends StatefulWidget {
@@ -29,7 +30,9 @@ class _MasterScreenState extends State<MasterScreen> {
         backgroundColor: Colors.transparent,
       ),
       body: screen,
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ThemeScreen(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _pageIndex,
         items: <BottomNavigationBarItem>[
